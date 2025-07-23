@@ -1,0 +1,329 @@
+/* --- Cài đặt chung (giữ nguyên hoặc tùy chỉnh) --- */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit; /* Kế thừa màu từ thẻ cha */
+  transition: color 0.3s ease; /* Hiệu ứng chuyển màu mượt mà */
+}
+
+/* --- HEADER MỚI --- */
+.site-header {
+  background-color: #00569e; /* Nền xanh cho toàn bộ header */
+  color: #fff;
+  padding: 15px 0; /* Tăng padding để header thoáng hơn */
+  border-bottom: 3px solid #004a8a; /* Thêm đường viền dưới để tạo điểm nhấn */
+}
+
+.header-container {
+  width: 100%;
+  max-width: 1200px; /* Giới hạn chiều rộng nội dung */
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between; /* Dàn các phần tử ra xa nhau */
+  align-items: center; /* Căn giữa các phần tử theo chiều dọc */
+  gap: 20px; /* Khoảng cách giữa các khối: logo, danh mục, search, user */
+}
+
+/* 1. Logo */
+.logo img {
+  height: 40px; /* Chiều cao của logo */
+  display: block; /* Loại bỏ khoảng trắng thừa bên dưới ảnh */
+}
+
+/* 2. Menu Danh mục */
+.category-menu a {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Khoảng cách giữa icon và chữ */
+  padding: 10px 15px;
+  background-color: rgba(0, 0, 0, 0.1); /* Màu nền trong suốt nhẹ */
+  border-radius: 5px;
+  font-weight: bold;
+  white-space: nowrap; /* Đảm bảo chữ "Danh Mục" không bị xuống dòng */
+  transition: background-color 0.3s;
+}
+
+.category-menu a:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* 3. Thanh tìm kiếm */
+.search-area {
+  flex-grow: 1; /* Cho phép thanh tìm kiếm chiếm nhiều không gian nhất có thể */
+  max-width: 600px;
+}
+
+.search-area form {
+  position: relative;
+  width: 100%;
+}
+
+.search-area input[type="text"] {
+  width: 100%;
+  height: 42px;
+  border-radius: 21px; /* Bo tròn hoàn toàn */
+  border: 1px solid transparent;
+  padding: 0 50px 0 20px; /* Chừa không gian cho icon tìm kiếm */
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.search-area button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 42px;
+  width: 50px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #555;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 4. Tài khoản & Giỏ hàng */
+.user-actions {
+  display: flex;
+  align-items: center;
+  gap: 25px; /* Khoảng cách giữa Tài khoản và Giỏ hàng */
+}
+
+.user-actions a {
+  display: flex;
+  flex-direction: column; /* Xếp icon trên, chữ dưới */
+  align-items: center;
+  font-size: 12px; /* Chữ nhỏ hơn một chút */
+  font-weight: bold;
+  gap: 4px; /* Khoảng cách nhỏ giữa icon và chữ */
+}
+
+.user-actions i {
+  font-size: 1.5em; /* Làm icon to hơn đáng kể */
+}
+
+.user-actions a:hover {
+  color: #ffdd00; /* Đổi màu khi hover để nổi bật */
+}
+
+/* Điều chỉnh lại .user-actions để các mục căn giữa đẹp hơn */
+.user-actions {
+  align-items: center; /* Đã có ở trên nhưng đảm bảo lại */
+}
+
+.language-selector {
+  position: relative;
+  margin-left: 15px;
+}
+
+/* Nút hiển thị ngôn ngữ hiện tại */
+.language-current {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Khoảng cách giữa các mục bên trong */
+  padding: 8px 12px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 13px;
+  font-weight: bold;
+  white-space: nowrap;
+
+  /* YÊU CẦU 1: Cố định chiều rộng để không bị "nhảy" layout */
+  min-width: 110px;
+  justify-content: flex-start; /* Căn các mục về bên trái */
+}
+
+.language-current:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.language-current .fa-caret-down {
+  margin-left: auto; /* Đẩy mũi tên vềสุด bên phải */
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+/* YÊU CẦU 2: Định dạng cho hình ảnh cờ */
+.lang-flag {
+  width: 20px;
+  height: 15px; /* Giữ tỷ lệ cờ 4:3 */
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Dropdown (giữ nguyên hầu hết) */
+.language-dropdown {
+  display: none;
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background-color: #fff;
+  color: #333;
+  border-radius: 5px;
+  list-style: none;
+  padding: 5px 0;
+  margin: 0;
+  width: 100%; /* Đảm bảo dropdown có chiều rộng bằng nút chính */
+  min-width: 140px; /* Độ rộng tối thiểu cho dropdown */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+.language-selector.active .language-dropdown {
+  display: block;
+}
+
+/* Các mục trong dropdown */
+.language-dropdown li a {
+  display: flex;
+  flex-direction: row; /* QUAN TRỌNG: Đảm bảo các mục nằm ngang hàng */
+  justify-content: center; /* Căn giữa toàn bộ nội dung (cờ và chữ) */
+  align-items: center; /* Căn giữa các mục theo chiều dọc */
+  gap: 10px; /* Khoảng cách giữa cờ và chữ */
+  padding: 15px 15px; /* Tăng padding cho thoáng hơn, giống trong ảnh */
+  font-size: 15px; /* Tăng kích thước chữ một chút */
+  transition: background-color 0.2s;
+  color: #333; /* Màu chữ mặc định */
+}
+
+.language-dropdown li a:hover {
+  background-color: #f5f5f5;
+}
+
+.category-menu-container {
+  position: relative; /* RẤT QUAN TRỌNG: Làm gốc để định vị menu */
+}
+
+/* --- Khung chính của Mega Menu --- */
+.mega-menu {
+  display: none; /* Mặc định ẩn */
+  position: absolute;
+  top: 125%;
+  left: 0;
+  margin-top: 10px;
+  width: 1000px; /* Chiều rộng cố định giống ảnh */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  overflow: hidden;
+}
+.mega-menu.active {
+  display: block; /* Hiện ra khi có class 'active' */
+}
+
+/* --- Đầu Menu (Thanh màu xanh) --- */
+.mega-menu-header {
+  background-color: #2a4176; /* Màu xanh đậm giống ảnh */
+  color: #fff;
+  padding: 12px 20px;
+}
+.mega-menu-title {
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer; /* Cho phép click để đóng */
+}
+
+/* --- Nội dung Menu --- */
+.mega-menu-content {
+  display: flex;
+  min-height: 450px;
+}
+
+/* --- Thanh điều hướng bên trái --- */
+.mega-menu-nav {
+  flex: 0 0 250px; /* Chiều rộng cố định, không co giãn */
+  background-color: #f7f7f7;
+  border-right: 1px solid #e0e0e0;
+}
+.mega-menu-nav ul {
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+}
+.mega-menu-nav li a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+  border-left: 3px solid transparent;
+}
+/* Hiệu ứng khi di chuột qua */
+.mega-menu-nav li:hover a {
+  background-color: #fff;
+}
+/* Mục đang được chọn */
+.mega-menu-nav li.active a {
+  background-color: #fff;
+  font-weight: bold;
+  color: #2a4176;
+  border-left: 3px solid #2a4176;
+}
+.mega-menu-nav li a .fa-chevron-right {
+  font-size: 12px;
+  opacity: 0.5;
+}
+
+/* --- Vùng nội dung chính bên phải --- */
+.mega-menu-main {
+  flex-grow: 1;
+  padding: 25px 30px;
+}
+.mega-menu-grid {
+  display: none; /* Ẩn tất cả các bảng nội dung */
+  grid-template-columns: repeat(4, 1fr); /* Chia 4 cột */
+  gap: 30px;
+}
+.mega-menu-grid.active {
+  display: grid; /* Chỉ hiện bảng được chọn */
+}
+.mega-menu-column h4 {
+  font-size: 15px;
+  color: #000;
+  margin-top: 0;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  font-weight: bold;
+}
+.mega-menu-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.mega-menu-column li {
+  margin-bottom: 12px;
+}
+.mega-menu-column li a {
+  font-size: 14px;
+  color: #555;
+  text-decoration: none;
+}
+.mega-menu-column li a:hover {
+  color: #2a4176;
+}
+.mega-menu-column a.view-more {
+  color: #007bff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-size: 13px;
+}
+.mega-menu-column a.view-more i {
+  font-size: 11px;
+}

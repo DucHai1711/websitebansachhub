@@ -1,0 +1,148 @@
+<header class="site-header">
+  <div class="header-container">
+    <!-- 1. Logo -->
+    <div class="logo">
+      <a href="/">
+        <img src="https://placehold.co/200x50" alt="Logo Nhà Sách" />
+      </a>
+    </div>
+
+    <!-- 2. Menu danh mục -->
+    <!-- ======================= CẤU TRÚC MEGA MENU HOÀN CHỈNH ======================= -->
+    <!-- Thẻ div bao bọc để định vị -->
+    <div class="category-menu-container">
+      <!-- Nút "Danh Mục" để kích hoạt menu -->
+      <div class="category-menu">
+        <a href="#">
+          <i class="fa-solid fa-bars"></i>
+          <span>Danh Mục</span>
+        </a>
+      </div>
+
+      <!-- Mega Menu - Bảng điều khiển lớn -->
+      <div class="mega-menu" id="mega-menu-container">
+        <!-- 2. Nội dung chính của menu -->
+        <div class="mega-menu-content">
+          <!-- 2.1. Vùng điều hướng bên trái (Nav) -->
+          <div class="mega-menu-nav">
+            <ul>
+              <li class="active" data-target="content-sach-tieng-viet">
+                <a href="#"
+                  >Sách Tiếng Việt <i class="fa-solid fa-chevron-right"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- 2.2. Vùng nội dung chính bên phải (Main Content) -->
+          <div class="mega-menu-main">
+            <!-- Bảng danh mục cho Sách Tiếng Việt -->
+            <div class="mega-menu-grid active" id="content-sach-tieng-viet">
+              <div class="mega-menu-column">
+                <h4>Văn Học</h4>
+                <ul>
+                  <li><a href="#">Văn Học Đương Đại</a></li>
+                  <li><a href="#">Văn Học Kinh Điển/Cổ Điển</a></li>
+                  <li><a href="#">Văn Học Các Nước</a></li>
+                  <li><a href="#">Truyện Ngắn/Tản Văn</a></li>
+                  <li><a href="#">Tình Cảm/Lãng Mạn</a></li>
+                </ul>
+              </div>
+              <div class="mega-menu-column">
+                <h4>Thiếu Nhi</h4>
+                <ul>
+                  <li><a href="#">Văn Học Thiếu Nhi</a></li>
+                  <li><a href="#">Kiến Thức Bách Khoa</a></li>
+                  <li><a href="#">Truyện Cổ Tích/Ngụ Ngôn</a></li>
+                  <li><a href="#">Sách Tranh - Ehon</a></li>
+                  <li><a href="#">Tô Màu/Luyện Chữ/Cắt Dán</a></li>
+                </ul>
+              </div>
+              <div class="mega-menu-column">
+                <h4>Kinh Tế/Kinh Doanh</h4>
+                <ul>
+                  <li><a href="#">Quản Trị Kinh Doanh</a></li>
+                  <li><a href="#">Marketing/Bán Hàng</a></li>
+                  <li><a href="#">Ngân Hàng/Tài Chính/Kế Toán</a></li>
+                  <li><a href="#">Quản Trị Nhân Sự/Tuyển Dụng</a></li>
+                </ul>
+              </div>
+              <div class="mega-menu-column">
+                <h4>Tác Giả</h4>
+                <ul>
+                  <li><a href="#">Thích Nhất Hạnh</a></li>
+                  <li><a href="#">Phạm Công Luận</a></li>
+                  <li><a href="#">Tô Hoài</a></li>
+                  <li><a href="#">Nguyễn Nhật Ánh</a></li>
+                  <li><a href="#">Nguyễn Ngọc Tư</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 3. Thanh tìm kiếm -->
+    <div class="search-area">
+      <form action="/search" method="get">
+        <input
+          type="text"
+          name="q"
+          placeholder="Tìm kiếm sản phẩm bạn muốn..."
+        />
+        <button type="submit" aria-label="Tìm kiếm">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+    </div>
+
+    <!-- 4. Tài khoản và Giỏ hàng -->
+    <div class="user-actions">
+      <a href="#" class="user-account">
+        <i class="fa-solid fa-user"></i>
+        <span>Tài Khoản</span>
+      </a>
+      <a href="#" class="cart">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span>Giỏ hàng</span>
+      </a>
+      <div class="language-selector">
+        <!-- Nút hiển thị ngôn ngữ hiện tại và mở dropdown -->
+        <div class="language-current" id="lang-toggle">
+          <!-- Thêm thẻ img cho cờ -->
+          <img
+            src="https://flagcdn.com/w20/vn.png"
+            alt="Cờ Việt Nam"
+            id="current-lang-flag"
+            class="lang-flag"
+          />
+          <span id="current-lang-text">Tiếng Việt</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </div>
+        <!-- Dropdown chứa các lựa chọn ngôn ngữ -->
+        <ul class="language-dropdown" id="lang-dropdown">
+          <li>
+            <a href="#">
+              <img
+                src="https://flagcdn.com/w20/vn.png"
+                alt="Cờ Việt Nam"
+                class="lang-flag"
+              />
+              <span>Tiếng Việt</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img
+                src="https://flagcdn.com/w20/gb.png"
+                alt="Cờ Vương quốc Anh"
+                class="lang-flag"
+              />
+              <span>English</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>

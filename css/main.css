@@ -1,0 +1,192 @@
+/* ================= CSS CHO KHU VỰC SẢN PHẨM ================= */
+
+/* --- Cài đặt chung cho mỗi khu vực --- */
+.product-section {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 15px;
+}
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.section-header h2 {
+  font-size: 24px;
+  color: #333;
+  margin: 0;
+}
+.subtitle {
+  font-size: 12px;
+  color: #888;
+  display: block;
+}
+.category-tabs {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #eee;
+}
+.category-tabs a {
+  text-decoration: none;
+  color: #555;
+  font-size: 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s, border-color 0.3s;
+}
+.category-tabs a:hover,
+.category-tabs a.active {
+  color: #00569e;
+  border-bottom-color: #00569e;
+}
+
+/* --- Thẻ sản phẩm chung --- */
+.product-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: left;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.product-card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+.product-card a {
+  text-decoration: none;
+  color: inherit;
+}
+/* --- Cập nhật CSS cho ảnh sản phẩm để có tỷ lệ chuẩn --- */
+.product-card img {
+  width: 100%;
+  height: 100%; /* QUAN TRỌNG: Kéo dãn ảnh để lấp đầy thẻ cha */
+  object-fit: cover; /* QUAN TRỌNG: Cắt ảnh cho vừa vặn, không bị méo */
+  display: block;
+}
+
+/* --- Thêm vào để định tỷ lệ khung hình cho khung chứa ảnh --- */
+.product-card .product-image-container,
+.product-card > a {
+  display: block;
+  /* TỶ LỆ MỚI: bớt dài và cân đối hơn */
+  aspect-ratio: 5 / 5;
+  overflow: hidden;
+  background-color: #f0f0f0;
+}
+.product-info {
+  padding: 15px;
+}
+.product-title {
+  font-size: 14px;
+  margin: 8px 0;
+  height: 40px; /* Giới hạn 2 dòng */
+  overflow: hidden;
+}
+.product-rating {
+  font-size: 12px;
+  color: #f9b13c;
+}
+
+/* --- Style 1 (Deal Hot) --- */
+.style-1 .product-image-container {
+  position: relative;
+}
+.style-1 .discount-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #d9534f;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 8px;
+  border-radius: 4px;
+}
+.style-1 .original-price {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 14px;
+  margin-right: 10px;
+}
+.style-1 .sale-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #d9534f;
+}
+.style-1 .add-to-cart-btn {
+  width: 100%;
+  background-color: #00569e;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s;
+}
+.style-1 .add-to-cart-btn:hover {
+  background-color: #004a8a;
+}
+
+/* --- Style 2 (Grid) --- */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cột */
+  gap: 20px;
+}
+.style-2 .stock-status {
+  font-size: 13px;
+  color: #28a745;
+  margin: 8px 0;
+}
+.style-2 .price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* --- Style 3 (SGK) --- */
+.style-3 .price {
+  font-size: 16px;
+  color: #333;
+}
+
+/* --- Carousel --- */
+.product-carousel-section {
+  position: relative;
+}
+.carousel-nav {
+  display: flex;
+  gap: 10px;
+}
+.carousel-nav button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+}
+.product-carousel-wrapper {
+  overflow: hidden;
+}
+.product-carousel {
+  display: flex;
+  gap: 20px;
+  padding-bottom: 10px; /* Dành không gian cho scrollbar nếu hiện */
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  /* Ẩn thanh scrollbar */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.product-carousel::-webkit-scrollbar {
+  display: none;
+} /* Chrome, Safari, and Opera */
+.product-carousel .product-card {
+  flex: 0 0 220px; /* Chiều rộng mỗi card, để hiển thị hơn 4 card một chút */
+}
