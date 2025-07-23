@@ -1,0 +1,130 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #c92127;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Footer Container */
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  background-color: #ffffff;
+  padding: 40px;
+  border-top: 5px solid #f3f3f3;
+}
+
+/* Main Content Grid */
+.footer-main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.footer-column h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.footer-column ul li {
+  margin-bottom: 12px;
+}
+
+.footer-column ul li a {
+  font-size: 14px;
+}
+
+/* Info Column */
+.info-column .logo img {
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+.info-column p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.info-column .bct-logo img {
+  width: 150px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.social-icons a img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.app-stores {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.app-stores a img {
+  width: 140px;
+  height: auto;
+}
+
+/* Partners Section */
+.partners-section {
+  padding: 30px 0;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.partner-logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  align-items: center;
+}
+
+.partner-logos .partner-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.partner-logos img {
+  max-width: 120px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Copyright Section */
+.copyright-section {
+  padding-top: 20px;
+  text-align: center;
+  font-size: 13px;
+  color: #666;
+}
